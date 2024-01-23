@@ -10,6 +10,7 @@ public class MiAlmacenApplication {
 		SpringApplication.run(MiAlmacenApplication.class, args);
 		System.out.println("HOLA MUNDO DE PEPINILLOS");
 		System.out.println("HOLA MUNDO DE PEPINOS");
+		System.out.println("HOLA MUNDO DE ISAAC");
 	}
 
 }
