@@ -20,6 +20,7 @@ public class MiAlmacenApplication {
 	
 	private static void crearPepinillos() {
 		System.out.println("PEPINILLOS CREADOS");
+		System.out.println("Pepinillo Lover");
 	}
 
 }
