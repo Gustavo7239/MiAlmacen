@@ -43,17 +43,21 @@ public class DAOServiceImpl implements DAOService {
 		productoR.delete(p);
 	}
 	@Override
-	public Producto findNombreProducto(String name) {
-		return productoR.findNombreProducto(name);
+	public Producto findByNameProducto(String name) {
+		return productoR.findByName(name);
 	}
-	public Producto findOneProducto(long l) {
-		return productoR.findProductoPorId(l);
+	@Override
+	public Producto findByIdProducto(long l) {
+		return productoR.findById(l);
 	}
 	
 	//Receta Methods --------------------------------------------
 	@Override
 	public void addReceta(Receta r) {
 		recetaR.save(r);
+		for(Producto p : r.getListaProductos()) {
+			recetaR.insertByProductoIntoReceta(p.getIdProducto(), r.getIdReceta());
+		}
 	}
 	@Override
 	public List<Receta> findAllReceta(){
@@ -68,8 +72,12 @@ public class DAOServiceImpl implements DAOService {
 		recetaR.delete(r);
 	}
 	@Override
-	public Receta findNombreReceta(String name) {
-		return recetaR.findByNameReceta(name);
+	public Receta findByNameReceta(String name) {
+		return recetaR.findByName(name);
+	}
+	@Override
+	public Receta findByIdReceta(long l) {
+		return recetaR.findById(l);
 	}
 	
 	//TipoProducto  Methods --------------------------------------------
@@ -90,8 +98,11 @@ public class DAOServiceImpl implements DAOService {
 		tipoProdR.delete(tp);
 	}
 	@Override
-	public TipoProducto findPorNombreTipoProducto(String nombre) {
-		return tipoProdR.findByNameTipoProducto(nombre);
+	public TipoProducto findByNameTipoProducto(String nombre) {
+		return tipoProdR.findByName(nombre);
 	}
-	
+	@Override
+	public TipoProducto findByIdTipoProducto(long l) {
+		return tipoProdR.findById(l);
+	}
 }

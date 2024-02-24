@@ -14,20 +14,22 @@ public interface DAOService {
 	List<Producto> findAllProducto(); 		//Select (R) read
 	void updateProducto(Producto p);		//Update (U) update
 	void deleteProducto(Producto p);		//Delete (D) delete
-	Producto findNombreProducto(String name);
+	Producto findByNameProducto(String name);
+	Producto findByIdProducto(long l);
 	
 	//Metodos Receta
 	void addReceta(Receta r);			//Insert (C) create
 	List<Receta> findAllReceta(); 		//Select (R) read
 	void updateReceta(Receta r);		//Update (U) update
 	void deleteReceta(Receta r);		//Delete (D) delete	
-	Receta findNombreReceta(String r);
+	Receta findByNameReceta(String r);
+	Receta findByIdReceta(long r);
 	
 	//Metodos TipoProductos
 	void addTipoProducto(TipoProducto tp);			//Insert (C) create
 	List<TipoProducto> findAllTipoProducto(); 		//Select (R) read
 	void updateTipoProducto(TipoProducto tp);		//Update (U) update
 	void deleteTipoProducto(TipoProducto tp);		//Delete (D) delete	
-	TipoProducto findPorNombreTipoProducto(String nombre);
-	Producto findOneProducto(long l);
+	TipoProducto findByNameTipoProducto(String nombre);
+	TipoProducto findByIdTipoProducto(long tp);
 }

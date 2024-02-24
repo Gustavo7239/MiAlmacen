@@ -24,13 +24,13 @@ public class ControlREST {
 	}
 	@GetMapping(value = "producto/add", produces= {"application/json"})
 	public String addProducto() {
-		Producto producto = new Producto(0L, "Atun", daoS.findPorNombreTipoProducto("Fruta"), 5, 1);
+		Producto producto = new Producto(0L, "Atun", daoS.findByNameTipoProducto("Fruta"), 5, 1);
 		daoS.addProducto(producto);
 		return "Se añadio corretamente "+ producto.toString();
 	}
 	@GetMapping(value = "producto/update", produces= {"application/json"})
 	public String actualizaProducto() {
-		Producto producto = daoS.findOneProducto(2L);
+		Producto producto = daoS.findByIdProducto(2L);
 		System.out.println(producto);
 		producto.setNombre("Otro producto");
 		daoS.updateProducto(producto);

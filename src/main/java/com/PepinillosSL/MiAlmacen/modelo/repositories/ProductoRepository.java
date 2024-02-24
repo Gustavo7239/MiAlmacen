@@ -1,3 +1,4 @@
+
 package com.PepinillosSL.MiAlmacen.modelo.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,9 +11,10 @@ import com.PepinillosSL.MiAlmacen.modelo.Producto;
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Long>{
 	
-	@Query(value="select * from producto p where p.nombre like :nom", nativeQuery = true)
-	Producto findNombreProducto(@Param("nom") String name);
+	@Query(value = "SELECT * FROM producto p WHERE p.nombre LIKE ':nom'", nativeQuery = true)
+	Producto findByName(@Param("nom") String name);
 
 	@Query(value = "SELECT * FROM `producto` WHERE `id_producto` = :id", nativeQuery = true)
-	Producto findProductoPorId(@Param("id") long l);
+	Producto findById(@Param("id") long l);
+	
 }

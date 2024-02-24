@@ -21,12 +21,12 @@ public class ControlProducto {
 	
 	@GetMapping(value = "/")
 	public String indice() {
-		return "index";
+		return "Producto";
 	}
 	
 	@GetMapping(value="/add")
 	public String addProducto(Model model) {
-		Producto producto = new Producto(0L, "Atun", daoS.findPorNombreTipoProducto("Fruta"), 5, 1);
+		Producto producto = new Producto(0L, "Atun", daoS.findByNameTipoProducto("Proteínas"), 5, 1);
 		System.out.println(producto);
 		daoS.addProducto(producto);
 		model.addAttribute("listadoPoductos", producto.toString());
@@ -34,15 +34,15 @@ public class ControlProducto {
 	}
 	
 	@GetMapping(value="/list")
-	public String obtenerProductos(Model model){
+	public String listProducto(Model model){
 		List<Producto> listaProducto = daoS.findAllProducto();
 		model.addAttribute("listadoProductos", listaProducto.toString());
 		return "Producto";
 	}
 	
 	@GetMapping(value = "/update")
-	public String actualizaProducto(Model model) {
-		Producto producto = daoS.findOneProducto(2L);
+	public String updateProducto(Model model) {
+		Producto producto = daoS.findByIdProducto(2L);
 		System.out.println(producto);
 		producto.setNombre("Otro producto");
 		daoS.updateProducto(producto);
@@ -51,8 +51,8 @@ public class ControlProducto {
 	}
 	
 	@GetMapping(value = "/delete")
-	public String borrarProducto(Model model) {
-		Producto producto = daoS.findOneProducto(3L);
+	public String deleteProducto(Model model) {
+		Producto producto = daoS.findByIdProducto(3L);
 		daoS.deleteProducto(producto);
 		model.addAttribute("listadoProductos",producto.toString());
 		return "Producto";
