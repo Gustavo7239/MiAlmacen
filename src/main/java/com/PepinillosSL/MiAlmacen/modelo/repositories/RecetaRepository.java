@@ -1,5 +1,7 @@
 package com.PepinillosSL.MiAlmacen.modelo.repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -19,4 +21,5 @@ public interface RecetaRepository extends JpaRepository<Receta,Long>{
 	
 	@Query(value = "INSERT INTO `receta_producto`(`producto_id`, `receta_id`) VALUES (':productoId',':recetaId')", nativeQuery = true)
 	void insertByProductoIntoReceta(@Param("productoId") Long p, @Param("recetaId") Long r);
+	List<Receta> findByDificultad(int dificultad);
 }

@@ -55,9 +55,6 @@ public class DAOServiceImpl implements DAOService {
 	@Override
 	public void addReceta(Receta r) {
 		recetaR.save(r);
-		for(Producto p : r.getListaProductos()) {
-			recetaR.insertByProductoIntoReceta(p.getIdProducto(), r.getIdReceta());
-		}
 	}
 	@Override
 	public List<Receta> findAllReceta(){
@@ -78,6 +75,11 @@ public class DAOServiceImpl implements DAOService {
 	@Override
 	public Receta findByIdReceta(long l) {
 		return recetaR.findById(l);
+	}
+	
+	@Override
+	public List<Receta> findAllRecetaDificultad(int dificultad) {
+		return recetaR.findByDificultad(dificultad);
 	}
 	
 	//TipoProducto  Methods --------------------------------------------
@@ -105,4 +107,6 @@ public class DAOServiceImpl implements DAOService {
 	public TipoProducto findByIdTipoProducto(long l) {
 		return tipoProdR.findById(l);
 	}
+
+	
 }

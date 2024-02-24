@@ -20,7 +20,7 @@ public class ControlProducto {
 	DAOService daoS;
 	
 	@GetMapping(value = "/")
-	public String indice() {
+	public String indice(Model model) {
 		return "Producto";
 	}
 	

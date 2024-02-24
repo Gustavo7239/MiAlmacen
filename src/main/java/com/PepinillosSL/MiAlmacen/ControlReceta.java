@@ -3,6 +3,7 @@ package com.PepinillosSL.MiAlmacen;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import com.PepinillosSL.MiAlmacen.modelo.dao.DAOService;
 @RequestMapping("/receta")
 public class ControlReceta {
 	
+	@Autowired
 	DAOService daoS;
 	
 	@GetMapping(value = "/")
@@ -60,8 +62,22 @@ public class ControlReceta {
 	@GetMapping(value = "/delete")
 	public String deleteReceta(Model model) {
 		Receta receta = daoS.findByNameReceta("Huevo frito");
-		daoS.deleteReceta(receta);
 		model.addAttribute("listadoProductos",receta.toString());
+		daoS.deleteReceta(receta);
+		return "Receta";
+	}
+	
+	@GetMapping(value="/listDificultad1")
+	public String listRecetaDificultad1(Model model){
+		List<Receta> listaReceta = daoS.findAllRecetaDificultad(1);
+		model.addAttribute("listadoProductos", listaReceta.toString());
+		return "Receta";
+	}
+	
+	@GetMapping(value="/listDificultad2")
+	public String listRecetaDificultad2(Model model){
+		List<Receta> listaReceta = daoS.findAllRecetaDificultad(2);
+		model.addAttribute("listadoProductos", listaReceta.toString());
 		return "Receta";
 	}
 }

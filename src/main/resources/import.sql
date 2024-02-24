@@ -41,6 +41,7 @@ INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALU
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Garbanzos', 3, 2, 20);
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Filete de cerdo', 3, 7, 9);
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Pavo', 3, 5, 12);
+INSERT INTO producto (nombre, tipo_producto_id, precio, cantidad) VALUES ('Macaco Fresco', 3, 9, 19);
 
 -- Lácteos
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Yogurt', 4, 4, 8);
@@ -77,3 +78,15 @@ INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALU
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Jarabe de arce', 6, 7, 10);
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Malvaviscos', 6, 3, 28);
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Regaliz', 6, 2, 20);
+
+-- Recetas
+
+INSERT INTO `receta` (`dificultad`, `id_receta`, `nombre`) VALUES (1, 1, 'fresas con azucar')
+INSERT INTO receta (dificultad, id_receta, nombre) VALUES (2, 2, 'Sopa du Macaco')
+
+-- RecetasProducto
+INSERT INTO `receta_producto` (`producto_id`, `receta_id`) VALUES ('9', '1')
+INSERT INTO `receta_producto` (`producto_id`, `receta_id`) VALUES ('53', '1')
+
+INSERT INTO `receta_producto` (`producto_id`, `receta_id`) VALUES ('31', '2')
+INSERT INTO `receta_producto` (`producto_id`, `receta_id`) VALUES ('27', '2')

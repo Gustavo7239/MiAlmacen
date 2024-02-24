@@ -51,11 +51,17 @@ public class ControlTipoProducto {
 		return "Tipo";
 	}
 	
-	@GetMapping(value = "/delete")
+	/*@GetMapping(value = "/delete")
 	public String deleteTipo(Model model) {
+		
 		TipoProducto tipo = daoS.findByIdTipoProducto(3L);
-		daoS.deleteTipoProducto(tipo);
+		List<Producto> listaProducto = daoS.findAllProductoByTipo(tipo);
+		for(Producto p:listaProducto) {
+			daoS.deleteProducto(p);
+		}
 		model.addAttribute("listadoProductos",tipo.toString());
+		daoS.deleteTipoProducto(tipo);
+		
 		return "Tipo";
-	}
+	}*/
 }
