@@ -55,7 +55,7 @@ INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALU
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Yogurt griego', 4, 3, 12);
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Leche de soja', 4, 6, 9);
 
--- Grasas y Aceites
+-- Grasas y Aceite
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Aceite de oliva', 5, 7, 15);
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Aceite de coco', 5, 8, 10);
 INSERT INTO `producto` (`nombre`, `tipo_producto_id`, `precio`, `cantidad`) VALUES ('Mantequilla de maní', 5, 4, 12);
