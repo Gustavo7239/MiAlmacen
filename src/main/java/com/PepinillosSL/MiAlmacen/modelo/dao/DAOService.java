@@ -16,7 +16,8 @@ public interface DAOService {
 	void deleteProducto(Producto p);		//Delete (D) delete
 	Producto findByNameProducto(String name);
 	Producto findByIdProducto(long l);
-	//List<Producto> findAllProductoByTipo(TipoProducto tipo);
+	int countAllProducto();
+	//List<Producto> findProductosByTipo(String tipo);
 	
 	//Metodos Receta
 	void addReceta(Receta r);			//Insert (C) create
@@ -26,6 +27,7 @@ public interface DAOService {
 	Receta findByNameReceta(String r);
 	Receta findByIdReceta(long r);
 	List<Receta> findAllRecetaDificultad(int dificultad);
+	int countAllReceta();
 	
 	//Metodos TipoProductos
 	void addTipoProducto(TipoProducto tp);			//Insert (C) create
@@ -34,4 +36,6 @@ public interface DAOService {
 	void deleteTipoProducto(TipoProducto tp);		//Delete (D) delete	
 	TipoProducto findByNameTipoProducto(String nombre);
 	TipoProducto findByIdTipoProducto(long tp);
+	int countAllTipoProducto();
+	
 }

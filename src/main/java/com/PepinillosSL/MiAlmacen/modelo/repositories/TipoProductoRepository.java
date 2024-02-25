@@ -12,8 +12,10 @@ import com.PepinillosSL.MiAlmacen.modelo.TipoProducto;
 public interface TipoProductoRepository extends JpaRepository<TipoProducto,Long>{
 
 	@Query(value = "SELECT * FROM `tipo_producto` WHERE `nombre` LIKE :nom", nativeQuery = true)
-	TipoProducto findByName(@Param("nom") String nombre);
+	TipoProducto findByName(@Param("nom") String name);
 
 	@Query(value = "SELECT * FROM `tipo_producto` WHERE `id_tipo_producto` = :id", nativeQuery = true)
 	TipoProducto findById(@Param("id") long l);
+	
+	
 }

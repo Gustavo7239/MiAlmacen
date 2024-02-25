@@ -50,7 +50,16 @@ public class DAOServiceImpl implements DAOService {
 	public Producto findByIdProducto(long l) {
 		return productoR.findById(l);
 	}
-	
+	@Override
+	public int countAllProducto() {
+		return (int) productoR.count();
+	}
+	/*
+	@Override
+	public List<Producto> findProductosByTipo(String tipo){
+		return productoR.findByTipo(tipo);
+	}
+	*/
 	//Receta Methods --------------------------------------------
 	@Override
 	public void addReceta(Receta r) {
@@ -75,6 +84,10 @@ public class DAOServiceImpl implements DAOService {
 	@Override
 	public Receta findByIdReceta(long l) {
 		return recetaR.findById(l);
+	}
+	@Override
+	public int countAllReceta() {
+		return (int) recetaR.count();
 	}
 	
 	@Override
@@ -106,6 +119,10 @@ public class DAOServiceImpl implements DAOService {
 	@Override
 	public TipoProducto findByIdTipoProducto(long l) {
 		return tipoProdR.findById(l);
+	}
+	@Override
+	public int countAllTipoProducto() {
+		return (int) tipoProdR.count();
 	}
 
 	

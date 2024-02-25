@@ -29,7 +29,7 @@ public class ControlReceta {
 	@GetMapping(value="/add")
 	public String addReceta(Model model) {		
 		List<Producto> rec = new ArrayList<>();
-		rec.add(daoS.findByIdProducto(4L));
+		rec.add(daoS.findByNameProducto("Huevo "));
 		
 		Receta receta = new Receta(0L,"Huevo frito", rec, 1);
 		System.out.println(receta);
